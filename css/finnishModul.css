@@ -1,0 +1,41 @@
+.finnishModul {
+	position: fixed;
+	display: none;
+	top: 100px;
+	left: calc(50% - 175px);
+	width: 350px;
+	height: 400px;
+	text-align: center;
+	background-color: #f4f6f9;
+	border: 1px solid lightgrey;
+	border-radius: 15px;
+	box-shadow: 5px 5px 8px grey;
+}
+
+.finnishBtn {
+	width: 80%;
+	height: 40px;
+	color: #fff;
+}
+
+#playAgain {
+	background-color: #04ad01;
+	border: 1px solid lightgrey;
+	border-radius: 10px 10px 0 0;
+}
+
+#playAgain:hover {
+	background-color: #039101;
+	cursor: pointer;
+}
+
+#closeGame {
+	background-color: #dd1616;
+	border: 1px solid lightgrey;
+	border-radius: 0 0 10px 10px;
+}
+
+#closeGame:hover {
+	background-color: #bf0b0b;
+	cursor: pointer;
+}

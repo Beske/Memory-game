@@ -1,0 +1,185 @@
+.gameModul {
+	display: none;
+	margin: auto;
+	width: 90%;
+	max-width: 900px;
+	height: 100%;
+}
+
+/* - Zaglavlje - */
+.gameModul-Header {
+	background-color: #f4f6f9;
+	text-align: center;
+	width: 100%;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.gameModul-Header-Part1 {
+	float: left;
+	height: 40px;
+	width: 70%;
+	margin: 0;
+	padding-top: 5px;
+}
+
+.gameModul-Header-Part2 {
+	float: left;
+	height: 40px;
+	width: 30%;
+	margin: 0;
+}
+
+.gameMargin {
+	margin: 0 10px 0 10px;
+	display: inline-block;
+	font-size: 22px;
+	color: #333756;
+}
+
+.gameBtn {
+	height: 100%;
+	width: auto;
+	margin-left: 5px;
+}
+
+.gameBtn:hover {
+	cursor: pointer;
+}
+
+/* - Deo za igru - */
+.gameModul-Main {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: center;
+	perspective: 800px;
+	margin-top: 20px;
+}
+
+/* - Stilizovanje kartica - */
+.card {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	transform-origin: center;
+	margin: 10px;
+}
+
+.card:hover {
+	cursor: pointer;
+}
+
+.card figure {
+	margin: 0;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	text-align: center;
+	border-radius: 10px;
+	border: 5px solid orange;
+}
+
+.card .front {
+	background-color: yellow;
+	box-shadow: 5px 5px 8px grey;
+	border-radius: 25px;
+}
+
+.card .back {
+	background-color: lightblue;
+	transform: rotateY(180deg);
+	box-shadow: inset 0 0 10px #000, 5px 5px 8px grey;
+	border-radius: 25px;
+}
+
+.card img {
+	margin-top: 5px;
+	max-width: 90%;
+	max-height: 90%;
+	height: 90%;
+}
+
+/* - Animacije - */
+.flipped {
+	transform: rotateY(180deg);
+}
+
+.flipped > figure {
+	animation: cardAnimate 1s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes cardAnimate {
+    0% {border-color: orange;}
+    100% {border-color: blue;}
+}
+
+.cardWrong {
+	animation: cardWrongRotate 1s;
+}
+
+.cardWrong > figure {
+	animation: cardWrongColor 1s;
+	animation: cardWrongRotate 1s;
+}
+
+@keyframes cardWrongColor {
+    0% {border-color: lightblue;}
+    25% {border-color: #ff0c0c;}
+    75% {border-color: #ff0c0c;}
+    100% {border-color: lightblue;}
+}
+
+@keyframes cardWrongRotate {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(10deg);}
+    75% {transform: rotate(-10deg);}
+    100% {transform: rotate(0deg);}
+}
+
+.cardCorrect > figure {
+	animation: cardCorrect 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes cardCorrect {
+    0% {border-color: blue;}
+    25% {border-color: lightgreen; background-color: lightgreen;}
+    100% {border-color: yellow; background-color: lightblue}
+}
+
+/* - Podesavanje za telefone - */
+@media screen and (max-width: 800px) {
+    .gameModul {
+        width: 100%;
+    }
+    .gameModul-Header {
+        height: 100px;
+    }
+    .gameModul-Header-Part1 {
+        width: 100%;
+    }
+    .gameModul-Header-Part2 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .card {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card {
+        width: 70px;
+        height: 70px;
+    }
+}

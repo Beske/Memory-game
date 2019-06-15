@@ -1,0 +1,35 @@
+@font-face {
+    font-family: disney;
+    src: url(../fonts/disney.ttf);
+}
+
+@font-face {
+    font-family: frozen;
+    src: url(../fonts/frozen.ttf);
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.backgroundImg {
+	background: url(../images/background.jpg);
+	height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* - Stilizovanje zvezdica - */
+.fa-star {
+    color: lightBlue;
+}
+.checked {
+    color: orange;
+}
+
+/* - Podasavanje za telefone - */
+@media screen and (max-width: 1260px) {
+    .backgroundImg {
+        background: none;
+    }
+}
